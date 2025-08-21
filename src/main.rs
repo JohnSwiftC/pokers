@@ -23,4 +23,7 @@ enum Hand {
     StraightFlush {high: Card},
 }
 
-fn main() {}
+pub mod config;
+fn main() {
+    let config = config::get_config();
+}
