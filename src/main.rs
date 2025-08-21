@@ -11,4 +11,16 @@ struct Card {
     suit: Suit,
 }
 
+enum Hand {
+    HighCard {high: Card},
+    Pair {high: Card},
+    TwoPair {high: Card},
+    ThreeOfAKind {high: Card},
+    Straight {high: Card},
+    Flush {high: Card},
+    FullHouse {high: Card},
+    FourOfAKind {high: Card},
+    StraightFlush {high: Card},
+}
+
 fn main() {}
