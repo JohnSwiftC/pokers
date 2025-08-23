@@ -1,0 +1,6 @@
+---
+calling-table:
+ initial-bet: 100
+ initial-pot: 300
+ table-size: 10
+ show-steps: false
