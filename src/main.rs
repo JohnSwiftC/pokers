@@ -25,30 +25,16 @@ enum Hand {
 
 pub mod config;
 pub mod math;
+
+use yaml_rust::Yaml;
 fn main() {
     let config = config::get_config();
-}
+    let doc = &config[0];
 
-#[cfg(test)]
-mod tests {
-    use super::*;
+    if let Yaml::Hash(map) = doc {
+        let mut iter = map.iter();
+        for (sim, sim_cfg) in iter {
 
-    #[test]
-    fn call_series_test() {
-        let odds: f64 = math::pot_odds(100, 200);
-        let test1 = {
-            let mut new_odds = odds;
-            let mut pot = 300;
-            for _ in 0..10 {
-                new_odds = math::pot_odds(100, pot);
-                pot += 100;
-            }
-
-            new_odds
-        };
-
-        let test2 = math::call_series_pot_odds(odds, 10);
-
-        println!("{}\n{}", test1, test2);
+        }
     }
 }
